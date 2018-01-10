@@ -1,0 +1,40 @@
+{
+  "name": "",
+  "front":{
+    "img": "img/polo/1/front.png",
+    "area": [
+      {
+        "name":"f1",
+        "bg": "",
+        "coords": ""
+      }
+    ]
+  },
+  "back":{
+    "img": "img/polo/1/back.png",
+    "area": [
+      {
+        "name":"b1",
+        "coords": ""
+      }
+    ]
+  },
+  "left":{
+    "img": "img/polo/1/left.png",
+    "area": [
+      {
+        "name":"l1",
+        "coords": ""
+      }
+    ]
+  },
+  "right":{
+    "img": "img/polo/1/right.png",
+    "area": [
+      {
+        "name":"r1",
+        "coords": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>html5 map area fill color</title>
+    <link rel="stylesheet" href="css/ionic.css" type="text/css"/>
+    <link rel="stylesheet" href="css/colpick.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/fabric.min.js"></script>
+    <script src="js/colpick.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body >
+    <div class="page">
+    	<div class="head">
+        <span>Diy Clothes</span>
+      </div>
+    	<div class="body clearfix">
+    		<div class="leftCol">
+          <div class="list">
+            <label class="item item-input item-select">
+              <div class="input-label">分類</div>
+              <select>
+                <option selected>T-shirt / T恤</option>
+                <option>Zip-up / 衛衣</option>
+                <option>Polo / 反領恤</option>
+              </select>
+            </label>
+            <div class='products__list'>
+              <a class="item item-thumbnail-left" href="#" onclick="product({'c':'tshirt','p':1})">
+                <img src="img/tshirt/1/front.png">
+                <h2>item01</h2>
+                <p>pno 01</p>
+              </a>
+              <a class="item item-thumbnail-left" href="#" onclick="product({'c':'polo','p':1})">
+                <img src="img/tshirt/2/front.png">
+                <h2>item02</h2>
+                <p>pno 02</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+    		<div class="rightCol">
+            <div class='logo'>
+              <button class="button button-small button-block button-dark">選擇圖片</button>
+              <div class='list logo_list'>
+                <div class="item item-avatar item-button-right">
+                   <img src="img/logo/leaf.png" onclick="logo('img/logo/leaf.png');">
+                   <button class="button button-assertive btn-remove-logo">
+                     <i class="icon ion-trash-a"></i>
+                   </button>
+                 </div>
+                 <div class="item item-avatar item-button-right">
+                    <img src="img/logo/heart.png" onclick="logo('img/logo/heart.png');">
+                    <button class="button button-assertive btn-remove-logo">
+                      <i class="icon ion-trash-a"></i>
+                    </button>
+                  </div>
+              </div>
+            </div>
+
+            <div class='font'>
+              <div class="list">
+                <div class="item item-input-inset">
+                  <label class="item-input-wrapper">
+                    <input type="text" name='test' placeholder="輸入內容">
+                  </label>
+                  <button class="button button-small" onclick='font()'>添加</button>
+                </div>
+                <label class="item item-input item-select">
+                  <div class="input-label">選擇字體</div>
+                  <select>
+                    <option selected>宋體</option>
+                    <option>微軟雅黑</option>
+                    <option新宋體</option>
+                  </select>
+                </label>
+                <div class='item'>ABC字體演示</div>
+              </div>
+            </div>
+        </div>
+    		<div class="main">
+          <div class='diy'>
+            <div class='canvas'>
+              <canvas id='canvas_front' width='360px' height='360px'></canvas>
+              <canvas id='canvas_back' width='360px' height='360px'></canvas>
+              <canvas id='canvas_left' width='360px' height='360px'></canvas>
+              <canvas id='canvas_right' width='360px' height='360px'></canvas>
+            </div>
+            <div class='map'>
+              <div class='front'>
+                <img usemap='#map_front'>
+                <map id='map_front' name='map_front'></map>
+              </div>
+              <div class='back'>
+                <img usemap='#map_back'>
+                <map id='map_back' name='map_back'></map>
+              </div>
+              <div class='left'>
+                <img usemap='#map_left'>
+                <map id='map_left' name='map_left'></map>
+              </div>
+              <div class='right'>
+                <img usemap='#map_right'>
+                <map id='map_right' name='map_right'></map>
+              </div>
+            </div>
+          </div>
+
+          <div class='controls'>
+              <div class='direction'>
+                <div class="button-bar button-small">
+                  <a class="button" onclick="direction('front')">Front</a>
+                  <a class="button" onclick="direction('back')">Back</a>
+                  <a class="button" onclick="direction('left')">Left</a>
+                  <a class="button" onclick="direction('right')">Right</a>
+                </div>
+              </div>
+              <input type="color" id="colorpicker" value="#FFFFFF" >
+          </div>
+        </div>
+    	</div>
+    	<div class="foot">
+        <span>Footer</span>
+      </div>
+    </div>
+
+
+
+<!--
+    <div id="main">
+      <div id='banner'></div>
+      <div id='products'>
+        <button type='button' onclick="product({'c':'tshirt','p':1})">tshirt</button>
+        <button type='button' onclick="product({'c':'polo','p':1})">polo</button>
+      </div>
+      <div id='diy'>
+        <div class='canvas'>
+          <canvas id='canvas_front' width='360px' height='360px'></canvas>
+          <canvas id='canvas_back' width='360px' height='360px'></canvas>
+          <canvas id='canvas_left' width='360px' height='360px'></canvas>
+          <canvas id='canvas_right' width='360px' height='360px'></canvas>
+        </div>
+        <div class='map'>
+          <div class='front'>
+            <img usemap='#map_front'>
+            <map id='map_front' name='map_front'></map>
+          </div>
+          <div class='back'>
+            <img usemap='#map_back'>
+            <map id='map_back' name='map_back'></map>
+          </div>
+          <div class='left'>
+            <img usemap='#map_left'>
+            <map id='map_left' name='map_left'></map>
+          </div>
+          <div class='right'>
+            <img usemap='#map_right'>
+            <map id='map_right' name='map_right'></map>
+          </div>
+        </div>
+      </div>
+        <div id='controls'>
+            <input type="color" id="colorpicker" value="#FFFFFF" >
+            <button type='button' onclick="change_color()">change color</button>
+        </div>
+        <div id='direction'>
+          <button type='button' onclick="direction('front')">Front</button>
+          <button type='button' onclick="direction('back')">Back</button>
+          <button type='button' onclick="direction('left')">Left</button>
+          <button type='button' onclick="direction('right')">Right</button>
+        </div>
+
+        <div id='logo'>
+          <img src='img/logo/leaf.png' onclick="logo('img/logo/leaf.png');">
+          <img src='img/logo/heart.png' onclick="logo('img/logo/heart.png');" style='width:50px;'>
+        </div>
+        <div id='font'>
+          <input type='text' name='test'>
+          <button type='button' onclick='font()'>添加文字</button>
+        </div>
+    </div>
+  -->
+  </body>
+</html>

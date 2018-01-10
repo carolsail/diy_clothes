@@ -1,0 +1,87 @@
+*{
+  margin:0;
+  padding:0;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+body{
+  background-image: url(../img/bg.jpg);
+  overflow: auto !important;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.page {
+  background:#fff;
+  margin: 0 auto;
+  width: 950px;
+}
+
+.head{
+  background: #444;
+  padding:20px;
+}
+.head span{
+  color:#fff;
+}
+
+.leftCol {
+    float: left;
+    width: 250px;
+}
+
+.rightCol {
+    float: right;
+    width: 300px;
+}
+
+/*  main   */
+.main {
+    overflow: hidden;
+}
+
+.map{
+  width:400px;
+  height:400px;
+  position: relative;
+}
+.front,.back,.left,.right{
+  width: 360px;
+  height:360px;
+  position:absolute;
+  margin:20px;
+}
+.front img,.back img,.left img,.right img{
+  width:100%;
+  height:100%;
+}
+
+.canvas-container{
+  position:absolute !important;
+  margin:20px;
+  z-index:5 !important;
+}
+
+.logo .logo_list{
+  height:300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.btn-remove-logo{
+  margin-top: 10px;
+}
+
+.foot{
+  background: #444;
+  padding:20px;
+}
+.foot span{
+  color:#fff;
+}
